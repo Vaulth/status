@@ -1,0 +1,14 @@
+.icon {
+    width: var(--size);
+    height: var(--size);
+}
+
+.iconX2 {
+    width: calc(var(--size) * 2);
+    height: calc(var(--size) * 2);
+}
+
+.iconX1dot5 {
+    width: calc(var(--size) * 1.5);
+    height: calc(var(--size) * 1.5);
+}

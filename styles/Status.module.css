@@ -1,0 +1,43 @@
+.status {
+    max-width: 1400px;
+    padding: var(--size);
+    display: flex;
+    gap: var(--size);
+    justify-content: space-between;
+    flex-direction: column;
+    gap: calc(var(--size) * 2);
+}
+
+.statusDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    color: rgba(var(--color), 1);
+}
+
+.oneStat {
+    display: flex;
+    flex-direction: row;
+    gap: calc(var(--size) * 0.5);
+    margin-bottom: calc(var(--size) / 2);;
+}
+
+.title {
+    font-size: calc(var(--size) * 1.5);
+    color: rgba(var(--color), 1);
+    margin-bottom: var(--size);
+}
+
+.desc {
+    font-size: var(--size);
+    color: rgba(var(--color), 1);
+    margin-bottom: var(--size);
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 1000px;
+    background-color: rgba(var(--color), 1);
+    margin-top: 6px;
+}

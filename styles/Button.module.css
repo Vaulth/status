@@ -1,0 +1,48 @@
+.button {
+    background-color: rgba(var(--color), 0.05);
+    border: 1px solid rgba(var(--colorAccent), 0.05);
+    backdrop-filter: blur(10px);
+    color: rgba(var(--color), 1);
+    border-radius: var(--radius);
+    display: flex;
+    cursor: pointer;
+    transition-duration: 200ms;
+    min-width: fit-content;
+}
+
+.button:hover {
+    background-color: rgba(var(--color), 0.1);
+}
+
+.buttonShiny {
+    color: rgba(var(--colorOnColor), 1);
+    background-color: rgba(var(--color), 1);
+    border-radius: var(--radius);
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+    transition-duration: 200ms;
+}
+
+.buttonShiny:hover {
+    -webkit-box-shadow:0 0 64px 0 rgba(var(--color), 1);
+    -moz-box-shadow: 0 0 64px 0 rgba(var(--color), 1);
+    box-shadow: 0 0 64px 0 rgba(var(--color), 1);
+}
+
+.buttonContent {
+    font-size: var(--size);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin:  calc(var(--size) * 0.5) var(--size) calc(var(--size) * 0.5) var(--size);
+    padding: 0;
+    gap: calc(var(--size) * 0.5);
+}
+
+.icon {
+    margin: 2px 0 0 0;
+    color: rgba(var(--colorAccent), 1);
+}
+

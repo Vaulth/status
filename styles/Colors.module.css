@@ -1,0 +1,15 @@
+.success {
+    color: rgba(100, 200, 0, 1);
+}
+
+.error {
+    color: rgba(200, 0, 0, 1);
+}
+
+.successBg {
+    background-color: rgba(100, 200, 0, 1);
+}
+
+.errorBg {
+    background-color: rgba(200, 0, 0, 1);
+}

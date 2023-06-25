@@ -1,0 +1,50 @@
+.notification {
+    background-color: rgba(var(--color), 0.05);
+    border: 1px solid rgba(var(--colorAccent), 0.05);
+    backdrop-filter: blur(10px);
+    color: rgba(var(--color), 1);
+    display: flex;
+    justify-content: space-between;
+    font-size: var(--size);
+    padding: var(--size);
+    position: absolute;
+    border-radius: var(--radius);
+    z-index: 1000;
+    max-width: 1400px;
+    bottom: var(--size);
+    right: var(--size);
+    left: var(--size);
+    width: auto;
+    transform: none;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--size);
+}
+
+.title {
+    font-size: var(--size);
+}
+
+.closeButton {
+    cursor: pointer;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    gap: var(--size);
+    flex-wrap: wrap;
+}
+
+@media (max-width: 1024px) {
+    .notification {
+        bottom: var(--size);
+        right: var(--size);
+        left: var(--size);
+        width: auto;
+        transform: none;
+    }
+}
