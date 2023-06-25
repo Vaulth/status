@@ -56,17 +56,21 @@ export function useStatistics() {
 
     useEffect(() => {
         const getStatistics = async () => {
-            const res = await axios.get('http://backend.vaulth.app/analytics');
+            const res = null;
 
-            console.log(res);
+            try {
+                res = await axios.get('http://backend.vaulth.app/analytics');
 
-            setStatistics({
-                itemNumber: res.data.itemNumber,
-                stampNumber: res.data.stampNumber,
-                artworkNumber: res.data.artworkNumber,
-                lastStamp: res.data.lastStamp,
-                lastArtwork: res.data.lastArtwork
-            });
+                setStatistics({
+                    itemNumber: res.data.itemNumber,
+                    stampNumber: res.data.stampNumber,
+                    artworkNumber: res.data.artworkNumber,
+                    lastStamp: res.data.lastStamp,
+                    lastArtwork: res.data.lastArtwork
+                });
+            } catch (error) {
+                console.log("status.vaulth.app: Failed to fetch statistics.")
+            }
         }
 
         getStatistics();
