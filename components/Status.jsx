@@ -5,8 +5,9 @@ import Button from "../components/Button";
 import * as Icon from "react-feather";
 import React, { useState, useEffect } from "react"
 
-var http = require('http');
-var https = require('https');
+const axios = require("axios");
+const http = require('http');
+const https = require('https');
 
 function checkWebsite(url) {
     https
@@ -40,18 +41,43 @@ export function useStatus() {
 
         checkStatus();
     }, []);
+
     return status;
+}
+
+export function useStatistics() {
+    const [statistics, setStatistics] = useState({
+        itemNumber: 1337,
+        stampNumber: 69,
+        artworkNumber: 420,
+        lastStamp: "LestStamp123",
+        lastArtwork: "LastArtwork123"
+    });
+
+    useEffect(() => {
+        const getStatistics = async () => {
+            const res = await axios.get('http://backend.vaulth.app/analytics');
+
+            console.log(res);
+
+            setStatistics({
+                itemNumber: res.data.itemNumber,
+                stampNumber: res.data.stampNumber,
+                artworkNumber: res.data.artworkNumber,
+                lastStamp: res.data.lastStamp,
+                lastArtwork: res.data.lastArtwork
+            });
+        }
+
+        getStatistics();
+    }, []);
+
+    return statistics;
 }
 
 export const Status = () => {
     const status = useStatus();
-
-    const itemNumber = 1337;
-    const stampNumber = 69;
-    const artworkNumber = 420;
-
-    const lastStamp = "SomeStamp123";
-    const lastArtwork = "SomeArtwork123";
+    const statistics = useStatistics();
 
     return (
         <div className={styles.status}>
@@ -66,13 +92,13 @@ export const Status = () => {
             <div className={styles.statusDiv}>
                 <div className={styles.desc}>Statistics</div>
                 <div >
-                    <div className={styles.oneStat}><Icon.File size={undefined} className={iconStyles.icon} /><b>{itemNumber}</b> Items</div>
-                    <div className={styles.oneStat}><Icon.Hexagon size={undefined} className={iconStyles.icon} /><b>{stampNumber}</b> Stamps</div>
-                    <div className={styles.oneStat}><Icon.Image size={undefined} className={iconStyles.icon} /><b>{artworkNumber}</b> Artworks</div>
+                    <div className={styles.oneStat}><Icon.File size={undefined} className={iconStyles.icon} /><b>{statistics.itemNumber}</b> Items</div>
+                    <div className={styles.oneStat}><Icon.Hexagon size={undefined} className={iconStyles.icon} /><b>{statistics.stampNumber}</b> Stamps</div>
+                    <div className={styles.oneStat}><Icon.Image size={undefined} className={iconStyles.icon} /><b>{statistics.artworkNumber}</b> Artworks</div>
                 </div>
                 <div>
-                    <div className={styles.oneStat}><Icon.Hexagon size={undefined} className={iconStyles.icon} />Last Stamp <b>{lastStamp}</b></div>
-                    <div className={styles.oneStat}><Icon.Image size={undefined} className={iconStyles.icon} />Last Artwork <b>{lastArtwork}</b></div>
+                    <div className={styles.oneStat}><Icon.Hexagon size={undefined} className={iconStyles.icon} />Last Stamp <b>{statistics.lastStamp}</b></div>
+                    <div className={styles.oneStat}><Icon.Image size={undefined} className={iconStyles.icon} />Last Artwork <b>{statistics.lastArtwork}</b></div>
                 </div>
             </div>
         </div>
