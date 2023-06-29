@@ -47,12 +47,12 @@ export const Status = () => {
             <div className={styles.title}>Official <b>Vaulth</b> services status</div>
             <div className={styles.statusDiv}>
                 <div className={styles.desc}>Services</div>
+                <StatusIndicator url={"https://www.portal.vaulth.app/"} name={"portal"} />  
                 <StatusIndicator url={"https://backend.vaulth.app/"} name={"backend"} />
                 <StatusIndicator url={"https://www.dashboard.vaulth.app/"} name={"dashboard"} />
                 <StatusIndicator url={"https://vaulth.app/"} name={"landing-page"} />
                 <StatusIndicator url={"https://blog.vaulth.app/"} name={"blog"} />
-                <StatusIndicator url={"https://support.vaulth.app/"} name={"support"} />
-                <StatusIndicator url={"https://portal.vaulth.app/"} name={"portal"} />           
+                <StatusIndicator url={"https://support.vaulth.app/"} name={"support"} />         
             </div>
             <div className={styles.statusDiv}>
                 <div className={styles.desc}>Statistics</div>
