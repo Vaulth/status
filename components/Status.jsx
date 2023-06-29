@@ -7,15 +7,19 @@ import React, { useState, useEffect } from "react"
 const axios = require("axios");
 
 const checkWebsite = async (url) => {
+    let websiteStatus = false;
+
     await axios.get(url)
         .then((response) => {
             console.log("SUCCESS: checkWebsite ({" + url + "}): " + response.status);
-            return true;
+            websiteStatus = true;
         })
         .catch((error) => {
             console.log("ERROR: checkWebsite ({" + url + "}): " + error.code);
-            return false;
+            websiteStatus = false;
         })
+
+    return websiteStatus
 }
 
 export function useStatus() {
