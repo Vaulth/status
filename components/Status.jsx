@@ -9,11 +9,11 @@ const axios = require("axios");
 const checkWebsite = async (url) => {
     await axios.get(url)
         .then((response) => {
-            console.log(response.status);
+            console.log("SUCCESS: checkWebsite ({" + url + "}): " + response.status);
             return true;
         })
         .catch((error) => {
-            console.log("checkWebsite ({" + url + "}): " + error.code);
+            console.log("ERROR: checkWebsite ({" + url + "}): " + error.code);
             return false;
         })
 }
