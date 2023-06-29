@@ -23,7 +23,9 @@ export function useStatus() {
         backend: false,
         dashboard: false,
         landingPage: false,
-        support: false
+        support: false,
+        blog: false,
+        portal: false
     });
 
     useEffect(() => {
@@ -33,6 +35,8 @@ export function useStatus() {
                 dashboard: await checkWebsite("https://dashboard.vaulth.app/"),
                 landingPage: await checkWebsite("https://vaulth.app/"),
                 support: await checkWebsite("https://support.vaulth.app/"),
+                blog: await checkWebsite("https://blog.vaulth.app/"),
+                portal: await checkWebsite("https://portal.vaulth.app/"),
             });
         }
 
@@ -86,7 +90,9 @@ export const Status = () => {
                 <div className={styles.oneStat}><div className={styles.dot + " " + (status.backend ? colorStyles.successBg : colorStyles.errorBg)} />Backend is {status.backend ? <span className={colorStyles.success}>up and running</span> : <span className={colorStyles.error}>offline</span>}</div>
                 <div className={styles.oneStat}><div className={styles.dot + " " + (status.dashboard ? colorStyles.successBg : colorStyles.errorBg)} />Dashboard is {status.dashboard ? <span className={colorStyles.success}>up and running</span> : <span className={colorStyles.error}>offline</span>}</div>
                 <div className={styles.oneStat}><div className={styles.dot + " " + (status.landingPage ? colorStyles.successBg : colorStyles.errorBg)} />Landing-Page is {status.landingPage ? <span className={colorStyles.success}>up and running</span> : <span className={colorStyles.error}>offline</span>}</div>
-                <div className={styles.oneStat}><div className={styles.dot + " " + (status.support ? colorStyles.successBg : colorStyles.errorBg)} />Support is {status.support ? <span className={colorStyles.success}>up and running</span> : <span className={colorStyles.error}>offline</span>}</div>
+                <div className={styles.oneStat}><div className={styles.dot + " " + (status.blog ? colorStyles.successBg : colorStyles.errorBg)} />Support is {status.support ? <span className={colorStyles.success}>up and running</span> : <span className={colorStyles.error}>offline</span>}</div>
+                <div className={styles.oneStat}><div className={styles.dot + " " + (status.blog ? colorStyles.successBg : colorStyles.errorBg)} />Blog is {status.blog ? <span className={colorStyles.success}>up and running</span> : <span className={colorStyles.error}>offline</span>}</div>
+                <div className={styles.oneStat}><div className={styles.dot + " " + (status.portal ? colorStyles.successBg : colorStyles.errorBg)} />Portal is {status.portal ? <span className={colorStyles.success}>up and running</span> : <span className={colorStyles.error}>offline</span>}</div>
             </div>
             <div className={styles.statusDiv}>
                 <div className={styles.desc}>Statistics</div>
