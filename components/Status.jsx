@@ -13,7 +13,7 @@ const checkWebsite = async (url) => {
             return true;
         })
         .catch((error) => {
-            console.log(error.response.status);
+            console.log("checkWebsite ({" + url + "}): " + error.code);
             return false;
         })
 }
@@ -27,12 +27,12 @@ export function useStatus() {
     });
 
     useEffect(() => {
-        function checkStatus() {
+        const checkStatus = async () => {
             setStatus({
-                backend: checkWebsite("https://backend.vaulth.app/"),
-                dashboard: checkWebsite("https://dashboard.vaulth.app/"),
-                landingPage: checkWebsite("https://vaulth.app/"),
-                support: checkWebsite("https://support.vaulth.app/"),
+                backend: await checkWebsite("https://backend.vaulth.app/"),
+                dashboard: await checkWebsite("https://dashboard.vaulth.app/"),
+                landingPage: await checkWebsite("https://vaulth.app/"),
+                support: await checkWebsite("https://support.vaulth.app/"),
             });
         }
 
@@ -53,21 +53,19 @@ export function useStatistics() {
 
     useEffect(() => {
         const getStatistics = async () => {
-            const res = null;
-
-            try {
-                res = await axios.get('http://backend.vaulth.app/analytics');
-
-                setStatistics({
-                    itemNumber: res.data.itemNumber,
-                    stampNumber: res.data.stampNumber,
-                    artworkNumber: res.data.artworkNumber,
-                    lastStamp: res.data.lastStamp,
-                    lastArtwork: res.data.lastArtwork
-                });
-            } catch (error) {
-                console.log("status.vaulth.app: Failed to fetch statistics.")
-            }
+            await axios.get('http://backend.vaulth.app/analytics')
+                .then((response) => {
+                    setStatistics({
+                        itemNumber: response.data.itemNumber,
+                        stampNumber: response.data.stampNumber,
+                        artworkNumber: response.data.artworkNumber,
+                        lastStamp: response.data.lastStamp,
+                        lastArtwork: response.data.lastArtwork
+                    });
+                })
+                .catch((error) => {
+                    console.log(error.code);
+                })
         }
 
         getStatistics();
