@@ -1,18 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Sora&display=swap');
 
-* {
-    z-index: 100;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  font-size: 1rem;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-family: 'Sora', sans-serif;
-}
-
 :root {
     --color: 0, 0, 0;
     --colorOnColor: 255, 255, 255;
@@ -26,6 +13,19 @@ body {
     :root {
         --size: 0.8rem;
     }
+}
+
+* {
+    z-index: 100;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: var(--size);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Sora', sans-serif;
 }
 
 main {
