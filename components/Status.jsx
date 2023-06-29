@@ -158,12 +158,24 @@ export const Status = () => {
             <div className={styles.title}>Official <b>Vaulth</b> services status</div>
             <div className={styles.statusDiv}>
                 <div className={styles.desc}>Services</div>
-                <div className={styles.oneStat}><div className={styles.dot + " " + (backendStatus ? colorStyles.successBg : colorStyles.errorBg)} />Backend is {backendStatus ? <span className={colorStyles.success}>up and running</span> : <span className={colorStyles.error}>offline</span>}</div>
-                <div className={styles.oneStat}><div className={styles.dot + " " + (dashboardStatus ? colorStyles.successBg : colorStyles.errorBg)} />Dashboard is {dashboardStatus ? <span className={colorStyles.success}>up and running</span> : <span className={colorStyles.error}>offline</span>}</div>
-                <div className={styles.oneStat}><div className={styles.dot + " " + (landingpageStatus ? colorStyles.successBg : colorStyles.errorBg)} />Landing-Page is {landingpageStatus ? <span className={colorStyles.success}>up and running</span> : <span className={colorStyles.error}>offline</span>}</div>
-                <div className={styles.oneStat}><div className={styles.dot + " " + (supportStatus ? colorStyles.successBg : colorStyles.errorBg)} />Support is {supportStatus ? <span className={colorStyles.success}>up and running</span> : <span className={colorStyles.error}>offline</span>}</div>
-                <div className={styles.oneStat}><div className={styles.dot + " " + (blogStatus ? colorStyles.successBg : colorStyles.errorBg)} />Blog is {blogStatus ? <span className={colorStyles.success}>up and running</span> : <span className={colorStyles.error}>offline</span>}</div>
-                <div className={styles.oneStat}><div className={styles.dot + " " + (portalStatus ? colorStyles.successBg : colorStyles.errorBg)} />Portal is {portalStatus ? <span className={colorStyles.success}>up and running</span> : <span className={colorStyles.error}>offline</span>}</div>
+                <div className={styles.oneStat}><div className={styles.dot + " " + (backendStatus == STATUS.Fetching ? colorStyles.runningBg : (backendStatus == STATUS.Running ? colorStyles.successBg : colorStyles.errorBg))} />
+                    {backendStatus == STATUS.Fetching ? <span>Fetching backend...</span> : <span>Backend is {backendStatus == STATUS.Running ? <span className={colorStyles.success}>up and running</span> : <span className={colorStyles.error}>offline</span>}</span>}
+                </div>
+                <div className={styles.oneStat}><div className={styles.dot + " " + (dashboardStatus == STATUS.Fetching ? colorStyles.runningBg : (dashboardStatus == STATUS.Running ? colorStyles.successBg : colorStyles.errorBg))} />
+                    {dashboardStatus == STATUS.Fetching ? <span>Fetching dashboard...</span> : <span>Dashboard is {dashboardStatus == STATUS.Running ? <span className={colorStyles.success}>up and running</span> : <span className={colorStyles.error}>offline</span>}</span>}
+                </div>
+                <div className={styles.oneStat}><div className={styles.dot + " " + (landingpageStatus == STATUS.Fetching ? colorStyles.runningBg : (landingpageStatus == STATUS.Running ? colorStyles.successBg : colorStyles.errorBg))} />
+                    {landingpageStatus == STATUS.Fetching ? <span>Fetching landing page...</span> : <span>Landing page is {landingpageStatus == STATUS.Running ? <span className={colorStyles.success}>up and running</span> : <span className={colorStyles.error}>offline</span>}</span>}
+                </div>                
+                <div className={styles.oneStat}><div className={styles.dot + " " + (supportStatus == STATUS.Fetching ? colorStyles.runningBg : (supportStatus == STATUS.Running ? colorStyles.successBg : colorStyles.errorBg))} />
+                    {supportStatus == STATUS.Fetching ? <span>Fetching support...</span> : <span>Support is {supportStatus == STATUS.Running ? <span className={colorStyles.success}>up and running</span> : <span className={colorStyles.error}>offline</span>}</span>}
+                </div>                
+                <div className={styles.oneStat}><div className={styles.dot + " " + (blogStatus == STATUS.Fetching ? colorStyles.runningBg : (blogStatus == STATUS.Running ? colorStyles.successBg : colorStyles.errorBg))} />
+                    {blogStatus == STATUS.Fetching ? <span>Fetching blog...</span> : <span>Blog is {blogStatus == STATUS.Running ? <span className={colorStyles.success}>up and running</span> : <span className={colorStyles.error}>offline</span>}</span>}
+                </div>                  
+                <div className={styles.oneStat}><div className={styles.dot + " " + (portalStatus == STATUS.Fetching ? colorStyles.runningBg : (portalStatus == STATUS.Running ? colorStyles.successBg : colorStyles.errorBg))} />
+                    {portalStatus == STATUS.Fetching ? <span>Fetching portal...</span> : <span>Portal is {portalStatus == STATUS.Running ? <span className={colorStyles.success}>up and running</span> : <span className={colorStyles.error}>offline</span>}</span>}
+                </div>              
             </div>
             <div className={styles.statusDiv}>
                 <div className={styles.desc}>Statistics</div>

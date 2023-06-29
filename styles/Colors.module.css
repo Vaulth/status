@@ -13,3 +13,7 @@
 .errorBg {
     background-color: rgba(200, 0, 0, 1);
 }
+
+.runningBg {
+    background-color: rgb(100, 200, 225);
+}
