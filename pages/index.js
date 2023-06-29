@@ -70,7 +70,7 @@ export default function Home() {
     return (
         <div className={styles.defaultPageWidth}>
             <Head>
-                <title>Vaulth # Status</title>
+                <title>Vaulth - Status</title>
             </Head>
             <Notification />
             <NavBar />
