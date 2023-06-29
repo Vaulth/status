@@ -1,24 +1,21 @@
 import styles from '../styles/Status.module.css';
 import iconStyles from "../styles/Icon.module.css";
 import colorStyles from "../styles/Colors.module.css";
-import Button from "../components/Button";
 import * as Icon from "react-feather";
 import React, { useState, useEffect } from "react"
 
 const axios = require("axios");
-const http = require('http');
-const https = require('https');
 
-function checkWebsite(url) {
-    https
-        .get(url, function (res) {
-            console.log(url, res.statusCode);
+const checkWebsite = async (url) => {
+    await axios.get(url)
+        .then((response) => {
+            console.log(response.status);
             return true;
         })
-        .on("error", function (e) {
-            console.log(url, "unreachable");
+        .catch((error) => {
+            console.log(error.response.status);
             return false;
-        });
+        })
 }
 
 export function useStatus() {
