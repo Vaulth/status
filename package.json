@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@next/font": "^13.1.4",
     "axios": "^1.4.0",
     "http-proxy-agent": "^7.0.0",
     "https-proxy-agent": "^7.0.0",
