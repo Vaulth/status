@@ -13,23 +13,33 @@ const STATUS = {
 };
 
 const checkWebsite = async (url) => {
-    let websiteStatus = STATUS.Offline;
+    let websiteStatus = {
+        status: STATUS.Offline,
+        latency: "?"
+    }
+    let end = undefined;
+    let start = new Date().getTime();
 
     await axios.get(url)
         .then((response) => {
-            console.log(response.latency);
-            websiteStatus = STATUS.Running;
+            end = new Date().getTime();
+            websiteStatus.status = STATUS.Running;
         })
         .catch((error) => {
-            console.log("ERROR: checkWebsite ({" + url + "}): " + error.code);
-            websiteStatus = STATUS.Offline;
+            end = new Date().getTime();
+            websiteStatus.status = STATUS.Offline;
         })
+
+    websiteStatus.latency = end - start;
 
     return websiteStatus
 }
 
 export function useStatus(url) {
-    const [status, setStatus] = useState(STATUS.Fetching);
+    const [status, setStatus] = useState({
+        status: STATUS.Fetching,
+        latency: "?"
+    });
 
     useEffect(() => {
         const checkStatus = async () => {
@@ -46,21 +56,26 @@ export const StatusIndicator = ({ url, name }) => {
     const status = useStatus(url);
     let dot = undefined;
     let text = undefined;
+    let latency = undefined;
 
-    if (status == STATUS.Fetching) {
-        dot = <div className={styles.dot + " " + colorStyles.runningBg} />
-        text = <span className={colorStyles.running}>Fetching {name.toLowerCase()}...</span>
-    } else if (status == STATUS.Offline) {
-        dot = <div className={styles.dot + " " + colorStyles.errorBg} />
-        text = <span>{name.charAt(0).toUpperCase() + name.slice(1).toLowerCase()} is <span className={colorStyles.error}>offline</span></span>
+    if (status.status == STATUS.Fetching) {
+        dot = <div className={styles.dot + " " + colorStyles.runningBg} />;
+        text = <span className={colorStyles.running}>Fetching {name.toLowerCase()}...</span>;
+    } else if (status.status == STATUS.Offline) {
+        dot = <div className={styles.dot + " " + colorStyles.errorBg} />;
+        text = <span>{name.charAt(0).toUpperCase() + name.slice(1).toLowerCase()} is <span className={colorStyles.error}>offline</span></span>;
     } else {
-        dot = <div className={styles.dot + " " + colorStyles.successBg} />
-        text = <span>{name.charAt(0).toUpperCase() + name.slice(1).toLowerCase()} is <span className={colorStyles.success}>up and running</span></span>
+        dot = <div className={styles.dot + " " + colorStyles.successBg} />;
+        text = <span>{name.charAt(0).toUpperCase() + name.slice(1).toLowerCase()} is <span className={colorStyles.success}>up and running</span></span>;
+        latency = <i>{status.latency} ms</i>;
     }
 
     return (
         <div className={styles.oneStat}>
-            {dot} {text}
+            {dot}
+            <span className={styles.space_between}>
+                {text} {latency}
+            </span>
         </div>
     );
 }

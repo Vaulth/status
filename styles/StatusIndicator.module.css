@@ -9,6 +9,13 @@
     background-color: rgba(var(--color), 0.05);
 }
 
+.space_between {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
 .dot {
     height: calc(var(--size)/1.8);
     width:  calc(var(--size)/1.8);
