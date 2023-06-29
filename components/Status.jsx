@@ -17,7 +17,6 @@ const checkWebsite = async (url) => {
 
     await axios.get(url)
         .then((response) => {
-            console.log("SUCCESS: checkWebsite ({" + url + "}): " + response.status);
             websiteStatus = STATUS.Running;
         })
         .catch((error) => {
