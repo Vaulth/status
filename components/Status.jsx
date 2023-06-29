@@ -47,7 +47,7 @@ export function useDashboardStatus() {
 
     useEffect(() => {
         const checkStatus = async () => {
-            setDashboardStatus(await checkWebsite("https://dashboard.vaulth.app/"));
+            setDashboardStatus(await checkWebsite("https://www.dashboard.vaulth.app/"));
         }
 
         checkStatus();
@@ -103,7 +103,7 @@ export function usePortalStatus() {
 
     useEffect(() => {
         const checkStatus = async () => {
-            setPortalStatus(await checkWebsite("https://portal.vaulth.app/"));
+            setPortalStatus(await checkWebsite("https://www.portal.vaulth.app/"));
         }
 
         checkStatus();
