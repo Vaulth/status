@@ -45,21 +45,17 @@ export function useStatus(url) {
 export const StatusIndicator = ({ url, name }) => {
     const status = useStatus(url);
     let dot = undefined;
-
-    const statusText = (status == STATUS.Running) ?
-        <span className={colorStyles.success}>up and running</span> :
-        <span className={colorStyles.error}>offline</span>;
-
-    const text = (status == STATUS.Fetching) ?
-        <span className={colorStyles.running}>Fetching {name.toLowerCase()}...</span> :
-        <span>{name.charAt(0).toUpperCase() + name.slice(1).toLowerCase()} is {statusText}</span>;
+    let text = undefined;
 
     if (status == STATUS.Fetching) {
         dot = <div className={styles.dot + " " + colorStyles.runningBg} />
+        text = <span className={colorStyles.running}>Fetching {name.toLowerCase()}...</span>
     } else if (status == STATUS.Offline) {
         dot = <div className={styles.dot + " " + colorStyles.errorBg} />
+        text = <span>{name.charAt(0).toUpperCase() + name.slice(1).toLowerCase()} is <span className={colorStyles.error}>offline</span></span>
     } else {
         dot = <div className={styles.dot + " " + colorStyles.successBg} />
+        text = <span>{name.charAt(0).toUpperCase() + name.slice(1).toLowerCase()} is <span className={colorStyles.success}>up and running</span></span>
     }
 
     return (
