@@ -18,7 +18,7 @@ export function useStatistics() {
 
     useEffect(() => {
         const getStatistics = async () => {
-            await axios.get('http://backend.vaulth.app/analytics')
+            await axios.get('https://backend.vaulth.app/analytics')
                 .then((response) => {
                     setStatistics({
                         itemNumber: response.data.infuraPins,
