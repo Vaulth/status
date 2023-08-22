@@ -21,7 +21,7 @@ export function useStatistics() {
             await axios.get('http://backend.vaulth.app/analytics')
                 .then((response) => {
                     setStatistics({
-                        itemNumber: response.data.itemNumber,
+                        itemNumber: response.data.infuraPins,
                         stampNumber: response.data.stampNumber,
                         artworkNumber: response.data.artworkNumber,
                         lastStamp: response.data.lastStamp,
