@@ -9,7 +9,6 @@ const axios = require("axios");
 
 export function useStatistics() {
     const [statistics, setStatistics] = useState({
-        itemNumber: 1337,
         stampNumber: 69,
         artworkNumber: 420,
         lastStamp: "LastStamp123",
@@ -18,10 +17,9 @@ export function useStatistics() {
 
     useEffect(() => {
         const getStatistics = async () => {
-            await axios.get('https://backend.vaulth.app/analytics')
+            await axios.get('https://api.vaulth.app/analytics')
                 .then((response) => {
                     setStatistics({
-                        itemNumber: response.data.infuraPins,
                         stampNumber: response.data.stampNumber,
                         artworkNumber: response.data.artworkNumber,
                         lastStamp: response.data.lastStamp,
@@ -48,7 +46,7 @@ export const Status = () => {
             <div className={styles.statusDiv}>
                 <div className={styles.desc}>Services</div>
                 <StatusIndicator url={"https://www.portal.vaulth.app/"} name={"portal"} />  
-                <StatusIndicator url={"https://backend.vaulth.app/"} name={"backend"} />
+                <StatusIndicator url={"https://api.vaulth.app/"} name={"backend"} />
                 <StatusIndicator url={"https://www.dashboard.vaulth.app/"} name={"dashboard"} />
                 <StatusIndicator url={"https://vaulth.app/"} name={"landing-page"} />
                 <StatusIndicator url={"https://blog.vaulth.app/"} name={"blog"} />
@@ -57,7 +55,6 @@ export const Status = () => {
             <div className={styles.statusDiv}>
                 <div className={styles.desc}>Statistics</div>
                 <div >
-                    <div className={styles.oneStat}><Icon.File size={undefined} className={iconStyles.icon} /><b>{statistics.itemNumber}</b> Items</div>
                     <div className={styles.oneStat}><Icon.Hexagon size={undefined} className={iconStyles.icon} /><b>{statistics.stampNumber}</b> Stamps</div>
                     <div className={styles.oneStat}><Icon.Image size={undefined} className={iconStyles.icon} /><b>{statistics.artworkNumber}</b> Artworks</div>
                 </div>
