@@ -21,18 +21,6 @@ const Desktop = (signUpForm, setSignUpForm) => {
                     content={"Home"}
                     target_url={"https://vaulth.app/"}
                 />
-                <Button
-                    icon={<Icon.Book con size={undefined} className={icon_styles.icon} />}
-                    content={"Documentation"}
-                    target_url={"https://docs.vaulth.app/"}
-                />
-                <div onClick={() => setSignUpForm(true)}>
-                <Button
-                    icon={<Icon.UserPlus con size={undefined} className={icon_styles.icon} />}
-                    content={"Apply"}
-                    target_url={"#"}
-                />
-                </div>
                 <div className={styles.separatorContainer}>
                 <Separator />
                 </div>
@@ -57,18 +45,6 @@ const Mobile = (menu, setMenu, signUpForm, setSignUpForm) => {
                         content={"Home"}
                         target_url={"https://vaulth.app/"}
                     />
-                    <Button
-                        icon={<Icon.Book con size={undefined} className={icon_styles.icon} />}
-                        content={"Documentation"}
-                        target_url={"https://docs.vaulth.app/"}
-                    />
-                    <div onClick={() => setSignUpForm(true)}>
-                    <Button
-                        icon={<Icon.UserPlus con size={undefined} className={icon_styles.icon} />}
-                        content={"Apply"}
-                        target_url={"#"}
-                    />
-                    </div>
                     <Button
                         shiny
                         icon={<Icon.ExternalLink con size={undefined} className={icon_styles.icon} />}
