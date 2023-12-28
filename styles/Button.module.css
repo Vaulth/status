@@ -1,8 +1,8 @@
 .button {
-    background-color: rgba(var(--color), 0.05);
-    border: 1px solid rgba(var(--colorAccent), 0.05);
+    background-color: rgba(var(--amber-12), 0.05);
+    border: 1px solid rgba(var(--amber-10), 0.05);
     backdrop-filter: blur(10px);
-    color: rgba(var(--color), 1);
+    color: rgba(var(--gray-12), 1);
     border-radius: var(--radius);
     display: flex;
     cursor: pointer;
@@ -11,12 +11,12 @@
 }
 
 .button:hover {
-    background-color: rgba(var(--color), 0.1);
+    background-color: rgba(var(--amber-12), 0.1);
 }
 
 .buttonShiny {
-    color: rgba(var(--colorOnColor), 1);
-    background-color: rgba(var(--color), 1);
+    color: rgba(var(--amber-1), 1);
+    background-color: rgba(var(--amber-11), 1);
     border-radius: var(--radius);
     display: flex;
     flex-direction: row;
@@ -25,9 +25,7 @@
 }
 
 .buttonShiny:hover {
-    -webkit-box-shadow:0 0 64px 0 rgba(var(--color), 1);
-    -moz-box-shadow: 0 0 64px 0 rgba(var(--color), 1);
-    box-shadow: 0 0 64px 0 rgba(var(--color), 1);
+    background-color: rgba(var(--amber-12), 1);
 }
 
 .buttonContent {
@@ -43,6 +41,11 @@
 
 .icon {
     margin: 2px 0 0 0;
-    color: rgba(var(--colorAccent), 1);
+    color: rgba(var(--gray-12), 1);
+}
+
+.iconShiny {
+    margin: 2px 0 0 0;
+    color: rgba(var(--amber-1), 1);
 }
 

@@ -26,6 +26,7 @@ const checkWebsite = async (url) => {
             websiteStatus.status = STATUS.Running;
         })
         .catch((error) => {
+            console.log(error);
             end = new Date().getTime();
             websiteStatus.status = STATUS.Offline;
         })
@@ -61,9 +62,11 @@ export const StatusIndicator = ({ url, name }) => {
     if (status.status == STATUS.Fetching) {
         dot = <div className={styles.dot + " " + colorStyles.runningBg} />;
         text = <span className={colorStyles.running}>Fetching {name.toLowerCase()}...</span>;
+        latency = <i>{status.latency} ms</i>;
     } else if (status.status == STATUS.Offline) {
         dot = <div className={styles.dot + " " + colorStyles.errorBg} />;
         text = <span>{name.charAt(0).toUpperCase() + name.slice(1).toLowerCase()} is <span className={colorStyles.error}>offline</span></span>;
+        latency = <i>{status.latency} ms</i>;
     } else {
         dot = <div className={styles.dot + " " + colorStyles.successBg} />;
         text = <span>{name.charAt(0).toUpperCase() + name.slice(1).toLowerCase()} is <span className={colorStyles.success}>up and running</span></span>;
@@ -74,8 +77,9 @@ export const StatusIndicator = ({ url, name }) => {
         <div className={styles.oneStat}>
             {dot}
             <span className={styles.space_between}>
-                {text} {latency}
+                {text}
             </span>
+            {latency}
         </div>
     );
 }

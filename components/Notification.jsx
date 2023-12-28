@@ -10,12 +10,12 @@ export const Notification = () => {
         <div className={styles.notification} id={"notification"}>
             <div className={styles.content}>
                 <div className={styles.title}>Coming <b>soon</b>!</div>
-                <div>Vaulth is currently in <b>development</b>. Follow us on <b>social media</b> to be the first to recieve <b>news</b> about the launch date.</div>
+                <div>Vaulth is currently in <b>development</b>. Follow us on <b>social media</b> to be the first to receive <b>news</b> about the launch date.</div>
                 <div className={styles.buttons}>
-                    <Button shiny icon={<Icon.Twitter size={undefined} className={iconStyles.icon} />} content={"Twitter"} target_url={"https://twitter.com/vaulthfr"} text_color={"rgba(var(--colorOnColor), 1)"}/>
-                    <Button shiny icon={<Icon.Linkedin size={undefined} className={iconStyles.icon} />} content={"LinkedIn"} target_url={"https://www.linkedin.com/company/vaulthfr"} text_color={"rgba(var(--colorOnColor), 1)"}/>
-                    <Button shiny icon={<Icon.GitHub size={undefined} className={iconStyles.icon} />} content={"GitHub"} target_url={"https://github.com/Vaulth"} text_color={"rgba(var(--colorOnColor), 1)"}/>
-                    <Button shiny icon={<Icon.MessageCircle size={undefined} className={iconStyles.icon} />} content={"Discord"} target_url={"https://discord.gg/c6KFMhzyPk"} text_color={"rgba(var(--colorOnColor), 1)"}/>
+                    <Button shiny icon={<Icon.Twitter con size={undefined} className={iconStyles.icon} />} content={"Twitter"} target_url={"https://twitter.com/vaulthfr"} text_color={"rgba(var(--amber-1), 1)"}/>
+                    <Button shiny icon={<Icon.Linkedin con size={undefined} className={iconStyles.icon} />} content={"LinkedIn"} target_url={"https://www.linkedin.com/company/vaulthfr"} text_color={"rgba(var(--amber-1), 1)"}/>
+                    <Button shiny icon={<Icon.GitHub con size={undefined} className={iconStyles.icon} />} content={"GitHub"} target_url={"https://github.com/Vaulth"} text_color={"rgba(var(--amber-1), 1)"}/>
+                    <Button shiny icon={<Icon.MessageCircle con size={undefined} className={iconStyles.icon} />} content={"Discord"} target_url={"https://discord.gg/c6KFMhzyPk"} text_color={"rgba(var(--amber-1), 1)"}/>
                 </div>
             </div>
             <div className={styles.closeButton} onClick={() => removeNotification()}>

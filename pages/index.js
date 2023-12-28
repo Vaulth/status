@@ -7,14 +7,36 @@ import * as Icon from "react-feather";
 import { useEffect, useState } from "react";
 
 function setDarkTheme() {
-    document.documentElement.style.setProperty('--color', '255, 255, 255');
-    document.documentElement.style.setProperty('--colorOnColor', '0, 0, 0');
-}
-
-function setLightTheme() {
-    document.documentElement.style.setProperty('--colorOnColor', '255, 255, 255');
-    document.documentElement.style.setProperty('--color', '0, 0, 0');
-}
+    document.documentElement.style.setProperty("--amber-1", "22, 18, 12");
+    document.documentElement.style.setProperty("--amber-2", "29, 24, 15");
+    document.documentElement.style.setProperty("--amber-3", "48, 32, 8");
+    document.documentElement.style.setProperty("--amber-4", "63, 39, 0");
+    document.documentElement.style.setProperty("--amber-5", "77, 48, 0");
+    document.documentElement.style.setProperty("--amber-6", "92, 61, 5");
+    document.documentElement.style.setProperty("--amber-7", "113, 79, 25");
+    document.documentElement.style.setProperty("--amber-8", "143, 100, 36");
+    document.documentElement.style.setProperty("--amber-9", "255, 197, 61");
+    document.documentElement.style.setProperty("--amber-10", "255, 214, 10");
+    document.documentElement.style.setProperty("--amber-11", "255, 202, 22");
+    document.documentElement.style.setProperty("--amber-12", "255, 231, 179");
+    document.documentElement.style.setProperty("--gray-12", "238, 238, 238");
+  }
+  
+  function setLightTheme() {
+    document.documentElement.style.setProperty("--amber-1", "22, 18, 12");
+    document.documentElement.style.setProperty("--amber-2", "29, 24, 15");
+    document.documentElement.style.setProperty("--amber-3", "48, 32, 8");
+    document.documentElement.style.setProperty("--amber-4", "63, 39, 0");
+    document.documentElement.style.setProperty("--amber-5", "77, 48, 0");
+    document.documentElement.style.setProperty("--amber-6", "92, 61, 5");
+    document.documentElement.style.setProperty("--amber-7", "113, 79, 25");
+    document.documentElement.style.setProperty("--amber-8", "143, 100, 36");
+    document.documentElement.style.setProperty("--amber-9", "255, 197, 61");
+    document.documentElement.style.setProperty("--amber-10", "255, 214, 10");
+    document.documentElement.style.setProperty("--amber-11", "255, 202, 22");
+    document.documentElement.style.setProperty("--amber-12", "255, 231, 179");
+    document.documentElement.style.setProperty("--gray-12", "238, 238, 238");
+  }
 
 export function useSystemTheme() {
     const [systemTheme, setSystemTheme] = useState({

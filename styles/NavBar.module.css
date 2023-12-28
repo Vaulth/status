@@ -8,7 +8,7 @@
 }
 
 .title {
-    color: rgba(var(--color), 1);
+    color: rgba(var(--gray-12), 1);
     font-size: var(--size);
 }
 
@@ -19,15 +19,15 @@
 }
 
 .separator {
-    color: rgba(var(--color), 1);
+    color: rgba(var(--gray-12), 1);
     min-width: var(--size);
     min-height: 1px;
 }
 
 .mobileMenu {
-    background-color: rgba(var(--color), 0.05);
-    border: 1px solid rgba(var(--colorAccent), 0.05);
-    color: rgba(var(--colorOnColor), 1);
+    background-color: rgba(var(--amber-12), 0.05);
+    border: 1px solid rgba(var(--amber-10), 0.05);
+    color: rgba(var(--amber-1), 1);
     display: flex;
     flex-direction: column;
     gap: var(--size);
@@ -37,5 +37,5 @@
 }
 
 .separatorContainer {
-    background-color: rgba(var(--color), 1);
+    background-color: rgba(var(--amber-12), 1);
 }

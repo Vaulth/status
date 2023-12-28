@@ -1,7 +1,20 @@
 .logo {
+    font-family: 'Sora';
     display: flex;
     gap: var(--size);
     align-items: center;
-    color: rgba(var(--color), 1);
+    color: rgba(var(--gray-12), 1);
     font-size: var(--size);
+}
+
+.canvas {
+    width: 28px;
+    height: 28px;
+}
+
+@media (min-width: 1024px) {
+    .canvas {
+        width: 34px;
+        height: 34px;
+    }
 }

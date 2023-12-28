@@ -1,0 +1,122 @@
+.container {
+    padding: 20px;
+    display: grid;
+    gap: 20px;
+    max-width: 1400px;
+    grid-auto-columns: minmax(0, 1fr);
+}
+
+.entry {
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(100px);
+    transition-duration: 150ms;
+    border-radius: var(--radius-main);
+}
+
+.entry:hover .highlight {
+    color: var(--accent-color);
+}
+
+.fullwidth {
+    width: 100%;
+}
+
+.entry_image {
+    position: relative;
+    min-width: 400px;
+    height: inherit;
+    border-radius: var(--radius-main);
+}
+
+.entry_image>* {
+    border-radius: var(--radius-main);
+}
+
+.argumentContainer {
+    padding: 40px;
+}
+
+.argumentContainer:hover {
+    transition-duration: 200ms;
+}
+
+.argumentContent {
+    line-height: var(--paragraph-line-height);
+    font-size: 14px;
+}
+
+.argumentTitle {
+    display: flex;
+    justify-content: space-between;
+}
+
+.argumentTitleText {
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.button_container {
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+}
+
+.thin {
+    font-weight: 200;
+}
+
+.image {
+    animation: float 6s ease-in-out infinite;
+    transition-duration: 150ms;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 40px;
+}
+
+@keyframes float {
+	0% {
+		/* box-shadow: 0 5px 15px 0px rgba(0,0,0,0.12); */
+		transform: translatey(0px);
+	}
+	50% {
+		/* box-shadow: 0 25px 15px 0px rgba(0,0,0,0.06); */
+		transform: translatey(-10px);
+	}
+	100% {
+		/* box-shadow: 0 5px 15px 0px rgba(0,0,0,0.12); */
+		transform: translatey(0px);
+	}
+}
+
+.imageParent {
+    transition-duration: 150ms;
+    height: 100%;
+    aspect-ratio: 1 / 1;
+}
+
+.imageParent:hover {
+    perspective: 221px;
+    transform: rotateX(5deg) rotateY(-10deg);
+    transform-style: preserve-3d;
+}
+
+.image:hover {
+    transform: perspective(1000px)
+}
+
+@media (min-width: 1024px) {
+    .container {
+        grid-auto-flow: column;
+    }
+
+    .entry {
+        width: 100%;
+    }
+/* } */

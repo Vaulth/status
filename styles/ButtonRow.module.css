@@ -1,0 +1,11 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    padding: var(--size);
+    gap: var(--size);
+    max-width: 1400px;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    flex-wrap: wrap;
+}

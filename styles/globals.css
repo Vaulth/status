@@ -1,11 +1,60 @@
-@import url('https://fonts.googleapis.com/css2?family=Sora&display=swap');
+@font-face {
+    font-family: "Sora";
+    src: local("Sora"), url("../public/fonts/Sora-VariableFont_wght.ttf");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "Orienta";
+    src: local("Orienta"), url("../public/fonts/Orienta-Regular.ttf");
+    font-weight: normal;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+* {
+    z-index: 100;
+    
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: 'Orienta', sans-serif;
+}
 
 :root {
-    --color: 0, 0, 0;
-    --colorOnColor: 255, 255, 255;
-    --colorAccent: 255, 200, 0;
     --radius: 20px;
     --size: 1rem;
+    --amber-1: rgb(22, 18, 12);
+    --amber-2: rgb(29, 24, 15);
+    --amber-3: rgb(48, 32, 8);
+    --amber-4: rgb(63, 39, 0);
+    --amber-5: rgb(77, 48, 0);
+    --amber-6: rgb(92, 61, 5);
+    --amber-7: rgb(113, 79, 25);
+    --amber-8: rgb(143, 100, 36);
+    --amber-9: rgb(255, 197, 61);
+    --amber-10: rgb(255, 214, 10);
+    --amber-11: rgb(255, 202, 22);
+    --amber-12: rgb(255, 231, 179);
+    --gray-1: rgb(17, 17, 17);
+    --gray-2: rgb(25, 25, 25);
+    --gray-3: rgb(34, 34, 34);
+    --gray-4: rgb(42, 42, 42);
+    --gray-5: rgb(49, 49, 49);
+    --gray-6: rgb(58, 58, 58);
+    --gray-7: rgb(72, 72, 72);
+    --gray-8: rgb(96, 96, 96);
+    --gray-9: rgb(110, 110, 110);
+    --gray-10: rgb(123, 123, 123);
+    --gray-11: rgb(180, 180, 180);
+    --gray-12: rgb(238, 238, 238);
 }
 
 
@@ -15,49 +64,36 @@
     }
 }
 
-* {
-    z-index: 100;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  font-size: var(--size);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-family: 'Sora', sans-serif;
-}
-
 main {
-  scroll-behavior:smooth;
-  height: 100vh;
-  box-sizing: border-box;
-  background-color: rgba(var(--colorOnColor), 1);
-  overflow-y: scroll;
-  padding: var(--size);
+    scroll-behavior: smooth;
+    height: 100vh;
+    box-sizing: border-box;
+    overflow-y: scroll;
+    background-color: rgba(var(--amber-1), 1);
+    padding: var(--size);
 }
 
 pre {
 
     display: inline;
     margin: 0;
-    background-color: rgba(var(--colorAccent), 0.1);
-    color: rgba(var(--colorAccent), 1);
-    padding: calc(var(--size) * 0.1) calc(var(--size) * 0.3) calc(var(--size) * 0.1) calc(var(--size) * 0.3) ;
+    background-color: rgba(var(--amber-10), 0.1);
+    color: rgba(var(--amber-10), 1);
+    padding: calc(var(--size) * 0.1) calc(var(--size) * 0.3) calc(var(--size) * 0.1) calc(var(--size) * 0.3);
     border-radius: 3px;
 }
 
 a {
     cursor: pointer;
-    color: rgba(var(--colorAccent), 1);
-    text-decoration: dotted underline rgba(var(--colorAccent), 0.4) 2px;
+    color: rgba(var(--amber-10), 1);
+    text-decoration: dotted underline rgba(var(--amber-10), 0.4) 2px;
     transition-duration: 50ms;
 }
 
 i {
-    color: rgba(var(--color), 0.4);
+    color: rgba(var(--gray-12), 0.4);
 }
 
 a:hover {
-    text-decoration: dotted underline rgba(var(--colorAccent), 1) 2px;
+    text-decoration: dotted underline rgba(var(--amber-10), 1) 2px;
 }

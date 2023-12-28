@@ -1,0 +1,56 @@
+.timeline {
+    margin: auto;
+    padding: var(--size);
+    max-width: 1400px;
+    font-size: var(--size);
+    display: flex;
+    border-radius: var(--radius);
+    flex-direction: row;
+    gap: var(--size);
+}
+
+.title {
+    font-family: 'Sora';
+    font-size: 28px;
+}
+
+.component {
+    max-height: 20vh;
+}
+
+.content {
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--size);
+}
+
+.contentButton {
+    width: fit-content;
+}
+
+.icon {
+    color: rgba(var(--amber-10), 1);
+}
+
+.column {
+    color: rgba(var(--gray-12), 1);
+    background-color: rgba(var(--amber-12), 0.05);
+    border: 1px solid rgba(var(--amber-10), 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: var(--radius);
+    display: flex;
+    flex-direction: column;
+    gap: var(--size);
+    padding: var(--size);
+}
+
+@media (max-width: 1024px) {
+    .timeline {
+        flex-direction: column;
+    }
+
+    .column {
+        max-width: none;
+    }
+}

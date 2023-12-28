@@ -3,6 +3,7 @@ import icon_styles from "../styles/Icon.module.css";
 import Button from "../components/Button";
 import * as Icon from "react-feather";
 import { useEffect, useState } from "react";
+import { signUpForm, setSignUpForm } from "./SignUpForm";
 import { useWindowSize } from "../pages/index";
 import Logo from "./Logo";
 
@@ -10,14 +11,34 @@ function Separator() {
     return <div className={styles.separator} />;
 }
 
-const Desktop = () => {
+const Desktop = (signUpForm, setSignUpForm) => {
     return (
         <div className={styles.navbar}>
-            <Logo text={"Status"} />
+            <Logo />
             <div className={styles.content}>
                 <Button
+                    icon={<Icon.Home con size={undefined} className={icon_styles.icon} />}
+                    content={"Home"}
+                    target_url={"https://vaulth.app/"}
+                />
+                <Button
+                    icon={<Icon.Book con size={undefined} className={icon_styles.icon} />}
+                    content={"Documentation"}
+                    target_url={"https://docs.vaulth.app/"}
+                />
+                <div onClick={() => setSignUpForm(true)}>
+                <Button
+                    icon={<Icon.UserPlus con size={undefined} className={icon_styles.icon} />}
+                    content={"Apply"}
+                    target_url={"#"}
+                />
+                </div>
+                <div className={styles.separatorContainer}>
+                <Separator />
+                </div>
+                <Button
                     shiny
-                    icon={<Icon.ExternalLink size={undefined} className={icon_styles.icon} />}
+                    icon={<Icon.ExternalLink con size={undefined} className={icon_styles.icon} />}
                     content={"Open App"}
                     target_url={"https://dashboard.vaulth.app/"}
                 />
@@ -26,23 +47,40 @@ const Desktop = () => {
     );
 };
 
-const Mobile = (menu, setMenu) => {
+const Mobile = (menu, setMenu, signUpForm, setSignUpForm) => {
     return (menu
         ? (
             <div>
                 <div className={styles.mobileMenu}>
                     <Button
+                        icon={<Icon.Home con size={undefined} className={icon_styles.icon} />}
+                        content={"Home"}
+                        target_url={"https://vaulth.app/"}
+                    />
+                    <Button
+                        icon={<Icon.Book con size={undefined} className={icon_styles.icon} />}
+                        content={"Documentation"}
+                        target_url={"https://docs.vaulth.app/"}
+                    />
+                    <div onClick={() => setSignUpForm(true)}>
+                    <Button
+                        icon={<Icon.UserPlus con size={undefined} className={icon_styles.icon} />}
+                        content={"Apply"}
+                        target_url={"#"}
+                    />
+                    </div>
+                    <Button
                         shiny
-                        icon={<Icon.ExternalLink size={undefined} className={icon_styles.icon} />}
+                        icon={<Icon.ExternalLink con size={undefined} className={icon_styles.icon} />}
                         content={"Open App"}
                         target_url={"https://dashboard.vaulth.app/"}
                     />
                 </div>
                 <div className={styles.navbar}>
-                    <Logo text={"Status"} />
+                    <Logo />
                     <div onClick={() => setMenu(false)}>
                         <Button
-                            icon={<Icon.X size={undefined} className={icon_styles.icon} />}
+                            icon={<Icon.X con size={undefined} className={icon_styles.icon} />}
                             content={"Menu"}
                             target_url={"#"}
                         />
@@ -52,10 +90,10 @@ const Mobile = (menu, setMenu) => {
         )
         : (
             <div className={styles.navbar}>
-                <Logo text={"Status"} />
+                <Logo />
                 <div onClick={() => setMenu(true)}>
                     <Button
-                        icon={<Icon.Menu size={undefined} className={icon_styles.icon} />}
+                        icon={<Icon.Menu con size={undefined} className={icon_styles.icon} />}
                         content={"Menu"}
                         target_url={"#"}
                     />
@@ -64,9 +102,9 @@ const Mobile = (menu, setMenu) => {
         ));
 };
 
-export const NavBar = () => {
+export const NavBar = ({ signUpForm, setSignUpForm }) => {
     const size = useWindowSize();
     const [menu, setMenu] = useState(false);
 
-    return size.width < 1024 ? Mobile(menu, setMenu) : Desktop();
+    return size.width < 1024 ? Mobile(menu, setMenu, signUpForm, setSignUpForm) : Desktop(signUpForm, setSignUpForm);
 };

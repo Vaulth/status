@@ -7,7 +7,7 @@
     display: flex;
     flex-direction: column;
     justify-content: stretch;
-    color: rgba(var(--color), 1);
+    color: rgba(var(--gray-12), 1);
     gap: var(--size);
 }
 

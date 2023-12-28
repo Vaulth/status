@@ -3,7 +3,7 @@
 }
 
 .defaultPageWidth {
-    background-color: rgba(var(--colorOnColor), 1);
+    background-color: rgba(var(--amber-1), 1);
 }
 
 .center {
@@ -13,4 +13,44 @@
 
 .center > * {
     margin: auto;
+}
+
+.carousel {
+    color: rgba(var(--gray-12), 1);
+    max-width: 1400px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel_arrow {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel_arrow > * {
+    width: 24px;
+    height: 24px;
+    margin: 24px;
+}
+
+.carousel_arrow:hover {
+    cursor: pointer;
+}
+
+.carousel_div {
+    display: flex;
+    flex-direction: column;
+    gap: var(--size);
+    border-radius: var(--radius);
+    background-color: rgba(var(--amber-12), 0.05);
+    border: 1px solid rgba(var(--amber-10), 0.05);
+    padding: var(--size);
+    margin-left: calc(var(--size)/ 2);
+    margin-right: calc(var(--size)/ 2);
 }

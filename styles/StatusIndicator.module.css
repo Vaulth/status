@@ -1,12 +1,12 @@
 .oneStat {
-    display: flex;
-    flex-direction: row;
-    gap: calc(var(--size) * 0.5);
-    margin-bottom: calc(var(--size) / 2);
-    padding: calc(var(--size) * 0.5) var(--size) calc(var(--size) * 0.5) var(--size);
-    border: 1px solid rgba(var(--colorAccent), 0.05);
+    color: rgba(var(--gray-12), 1);
+    background-color: rgba(var(--amber-12), 0.05);
+    border: 1px solid rgba(var(--amber-10), 0.05);
     border-radius: var(--radius);
-    background-color: rgba(var(--color), 0.05);
+    padding: var(--size);
+    display: flex;
+    flex-direction: column;
+    gap: var(--size);
 }
 
 .space_between {

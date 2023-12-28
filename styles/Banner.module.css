@@ -1,0 +1,75 @@
+.banner {
+    color: rgba(var(--gray-12), 1);
+    max-width: 1400px;
+    position: relative;
+    height: 70vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: var(--size);
+}
+
+.banner > div {
+    flex: 1 1 0;
+}
+
+.logo {
+    position: relative;
+    width: calc(var(--size) * 10);
+    height: calc(var(--size) * 10);
+    margin-bottom: 4vh;
+}
+
+.banner_image {
+    position: relative;
+    width: inherit;
+    height: 50vh;
+}
+
+.title {
+    font-family: 'Sora';
+    font-size: calc(var(--size) * 1.5);
+    padding-bottom: 2vh;
+}
+
+.slogan {
+    font-family: 'Orienta';
+    font-size: calc(var(--size) * 2);
+    margin-bottom: 4vh;
+}
+
+.desc {
+    font-family: 'Orienta';
+    font-size: var(--size);
+    margin-bottom: 4vh;
+}
+
+.cta {
+    display: flex;
+    flex-direction: row;
+    gap: var(--size);
+    align-items: center;
+}
+
+@media (min-width: 1024px) {
+
+    .title {
+        font-size: calc(var(--size) * 3);
+    }
+
+    .desc {
+        font-size: calc(var(--size) * 1.5);
+    }
+}
+
+.separator {
+    color: rgba(var(--gray-12), 1);
+    min-width: var(--size);
+    min-height: 1px;
+}
+
+.separatorContainer {
+    background-color: rgba(var(--amber-12), 1);
+    height: 1px;
+}

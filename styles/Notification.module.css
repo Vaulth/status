@@ -1,8 +1,8 @@
 .notification {
-    background-color: rgba(var(--color), 0.05);
-    border: 1px solid rgba(var(--colorAccent), 0.05);
+    background-color: rgba(var(--amber-12), 0.05);
+    border: 1px solid rgba(var(--amber-10), 0.05);
     backdrop-filter: blur(10px);
-    color: rgba(var(--color), 1);
+    color: rgba(var(--gray-12), 1);
     display: flex;
     justify-content: space-between;
     font-size: var(--size);
