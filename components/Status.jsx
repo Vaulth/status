@@ -20,10 +20,10 @@ export function useStatistics() {
             await axios.get('https://api.vaulth.app/analytics')
                 .then((response) => {
                     setStatistics({
-                        stampNumber: response.data.stampNumber,
-                        artworkNumber: response.data.artworkNumber,
-                        lastStamp: response.data.lastStamp,
-                        lastArtwork: response.data.lastArtwork
+                        stampNumber: response.data.stampCount,
+                        artworkNumber: response.data.certificateCount,
+                        lastStamp: "Vangart",
+                        lastArtwork: "Felix"
                     });
                 })
                 .catch((error) => {
@@ -54,16 +54,11 @@ export const Status = () => {
                 <StatusIndicator url={"https://support.vaulth.app/"} name={"support"} />         
                 </div>
             </div>
-            <div className={styles.statusDiv}>
-                <div className={styles.desc}>Statistics</div>
-                <div >
-                    <div className={styles.oneStat}><Icon.Hexagon size={undefined} className={iconStyles.icon} /><b>{statistics.stampNumber}</b> Stamps</div>
-                    <div className={styles.oneStat}><Icon.Image size={undefined} className={iconStyles.icon} /><b>{statistics.artworkNumber}</b> Artworks</div>
-                </div>
-                <div>
-                    <div className={styles.oneStat}><Icon.Hexagon size={undefined} className={iconStyles.icon} />Last Stamp <b>{statistics.lastStamp}</b></div>
-                    <div className={styles.oneStat}><Icon.Image size={undefined} className={iconStyles.icon} />Last Artwork <b>{statistics.lastArtwork}</b></div>
-                </div>
+            <div className={styles.statsDiv}>
+                    <div className={styles.oneStat}><Icon.Hexagon size={undefined} className={iconStyles.icon} /><b className={styles.accent}>{statistics.stampNumber}</b> Stamps</div>
+                    <div className={styles.oneStat}><Icon.Image size={undefined} className={iconStyles.icon} /><b className={styles.accent}>{statistics.artworkNumber}</b> Artworks</div>
+                    <div className={styles.oneStat}><Icon.Hexagon size={undefined} className={iconStyles.icon} />Last Stamp <b className={styles.accent}>{statistics.lastStamp}</b></div>
+                    <div className={styles.oneStat}><Icon.Image size={undefined} className={iconStyles.icon} />Last Artwork <b className={styles.accent}>{statistics.lastArtwork}</b></div>
             </div>
         </div>
     );

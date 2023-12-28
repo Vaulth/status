@@ -21,4 +21,22 @@
     gap: var(--size);
     justify-self: stretch;
     width: 100%;
-}   
+}
+
+.statsDiv {
+    display: flex;
+    flex-direction: column;
+    gap: var(--size);
+    justify-content: space-between;
+    margin: var(--size);
+}
+
+.oneStat {
+    display: flex;
+    gap: var(--size);
+    color: rgba(255,255,255, 1);
+}
+
+.accent {
+    color: rgba(var(--amber-12), 1);
+}
